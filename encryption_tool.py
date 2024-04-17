@@ -25,7 +25,6 @@ elif args.random is not None:
     key = key_generator.generate_key(args.random)
 else:
     key = generate_random_key()
-print("Your key is: {}".format(key))
 source = open(args.path, 'r')
 text = source.read()
 if args.output is not None:
@@ -33,6 +32,7 @@ if args.output is not None:
 else:
     output = open(args.path, 'w')
 if args.mode == 'encrypt' or args.mode == 'decrypt':
+    print("Your key is: {}".format(key))
     if args.algorithm == 'caesar':
         encryptor = cipher.Caesar()
     elif args.algorithm == 'vigenere':
