@@ -10,7 +10,7 @@ class Cipher:
 
 class Caesar(Cipher):
     def encrypt(self, text, key):
-        shift = ord(key[0])
+        shift = ord(key[0]) - 33
         result_text = ""
         for char in text:
             if char.isspace():
@@ -20,7 +20,7 @@ class Caesar(Cipher):
         return result_text
 
     def decrypt(self, text, key):
-        shift = ord(key[0])
+        shift = ord(key[0]) - 33
         result_text = ""
         for char in text:
             if char.isspace():
@@ -32,10 +32,28 @@ class Caesar(Cipher):
 
 class Vigenere(Cipher):
     def encrypt(self, text, key):
-        pass
+        it = 0
+        result_text = ""
+        for char in text:
+            if char.isspace():
+                result_text += char
+            else:
+                shift = ord(key[it]) - 33
+                result_text += chr(33 + (ord(char) - 33 + shift) % 94)
+                it = (it + 1) % len(key)
+        return result_text
 
     def decrypt(self, text, key):
-        pass
+        it = 0
+        result_text = ""
+        for char in text:
+            if char.isspace():
+                result_text += char
+            else:
+                shift = ord(key[it]) - 33
+                result_text += chr(33 + (ord(char) - 33 - shift) % 94)
+                it = (it + 1) % len(key)
+        return result_text
 
 
 class Vernam(Cipher):
