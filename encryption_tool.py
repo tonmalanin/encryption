@@ -12,8 +12,8 @@ def generate_random_key():
 
 
 parser = argparse.ArgumentParser(description='Encryption tool')
-parser.add_argument('mode', choices=['encrypt', 'decrypt', 'hack'], help='mode to use')
 parser.add_argument('path', type=str, help='path to working file')
+parser.add_argument('mode', choices=['encrypt', 'decrypt', 'hack'], help='mode to use')
 parser.add_argument('algorithm', choices=['caesar', 'vigenere', 'vernam'], help='algorithm to use')
 parser.add_argument('-k', '--key', type=str, help='key for encryption')
 parser.add_argument('-r', '--random', type=int, help='generate random key of a given length')
@@ -26,11 +26,11 @@ elif args.random is not None:
 else:
     key = generate_random_key()
 source = open(args.path, 'r')
+text = source.read()
 if args.output is not None:
     output = open(args.output, 'a')
 else:
     output = open(args.path, 'w')
-text = source.read()
 if args.mode == 'encrypt' or args.mode == 'decrypt':
     if args.algorithm == 'caesar':
         encryptor = cipher.Caesar()

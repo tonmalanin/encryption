@@ -16,7 +16,7 @@ class Caesar(Cipher):
             if char.isspace():
                 result_text += char
             else:
-                result_text += chr(33 + (ord(char) + shift) % 94)
+                result_text += chr(33 + (ord(char) - 33 + shift) % 94)
         return result_text
 
     def decrypt(self, text, key):
@@ -26,7 +26,7 @@ class Caesar(Cipher):
             if char.isspace():
                 result_text += char
             else:
-                result_text += chr(33 + (ord(char) - shift) % 94)
+                result_text += chr(33 + (ord(char) - 33 - shift) % 94)
         return result_text
 
 
