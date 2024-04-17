@@ -19,3 +19,14 @@ parser.add_argument('-k', '--key', type=str, default=generate_random_key(), help
 parser.add_argument('-r', '--random', type=int, help='generate random key of a given length')
 parser.add_argument('-o', '--output', type=str, help='path to output file')
 args = parser.parse_args()
+
+if args.mode == 'encrypt' or args.mode == 'decrypt':
+    if args.algorithm == 'caesar':
+        encryptor = cipher.Caesar()
+    elif args.algorithm == 'vigenere':
+        encryptor = cipher.Vigenere()
+    elif args.algorithm == 'vernam':
+        encryptor = cipher.Vernam()
+else:
+    if args.algorithm == 'vigenere' or args.algorithm == 'vernam':
+        print("The cipher cannot be cracked")
