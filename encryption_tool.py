@@ -48,7 +48,8 @@ else:
     if args.algorithm == 'vigenere' or args.algorithm == 'vernam':
         print("The cipher cannot be cracked")
     else:
-        result_text = lockpick.hack(text)
+        hacker = lockpick.LockPick()
+        result_text = hacker.hack(text)
         output.write(result_text)
 source.close()
 output.close()
