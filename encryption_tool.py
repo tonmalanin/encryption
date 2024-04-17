@@ -25,6 +25,7 @@ elif args.random is not None:
     key = key_generator.generate_key(args.random)
 else:
     key = generate_random_key()
+print("Your key is: {}".format(key))
 source = open(args.path, 'r')
 text = source.read()
 if args.output is not None:
