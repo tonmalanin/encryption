@@ -1,11 +1,14 @@
 import argparse
+import random
+import string
 from src import cipher
 from src import key_generator
 from src import lockpick
 
 
 def generate_random_key():
-    return 'key'
+    length = random.randrange(1, 256)
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
 
 parser = argparse.ArgumentParser(description='Encryption tool')
