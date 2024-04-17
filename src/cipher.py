@@ -10,10 +10,24 @@ class Cipher:
 
 class Caesar(Cipher):
     def encrypt(self, text, key):
-        pass
+        shift = ord(key[0])
+        result_text = ""
+        for char in text:
+            if char.isspace():
+                result_text += char
+            else:
+                result_text += chr(33 + (ord(char) + shift) % 94)
+        return result_text
 
     def decrypt(self, text, key):
-        pass
+        shift = ord(key[0])
+        result_text = ""
+        for char in text:
+            if char.isspace():
+                result_text += char
+            else:
+                result_text += chr(33 + (ord(char) - shift) % 94)
+        return result_text
 
 
 class Vigenere(Cipher):
@@ -30,4 +44,3 @@ class Vernam(Cipher):
 
     def decrypt(self, text, key):
         pass
-
