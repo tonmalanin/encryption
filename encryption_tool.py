@@ -1,6 +1,7 @@
 import argparse
 import random
 import string
+
 from src import cipher
 from src import key_generator
 from src import lockpick
