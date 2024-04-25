@@ -1,4 +1,4 @@
-import cipher
+from src import cipher
 
 
 class Vigenere(cipher.Cipher):

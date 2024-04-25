@@ -1,4 +1,4 @@
-import encryption_tool
+from src import encryption_tool
 
 tool = encryption_tool.EncryptionTool()
 tool.set_key()

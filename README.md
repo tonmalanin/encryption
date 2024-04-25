@@ -34,7 +34,7 @@
 
 ## **Запуск проекта:**
 ```
-python3 encryption_tool.py [-h] [-k KEY] [-r RANDOM] [-o OUTPUT]
+python3 main.py [-h] [-k KEY] [-r RANDOM] [-o OUTPUT]
                           path {encrypt,decrypt,hack} {caesar,vigenere,vernam}
 
 Позиционные аргументы:
