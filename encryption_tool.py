@@ -2,9 +2,11 @@ import argparse
 import random
 import string
 
-from src import cipher
+from src import caesar
 from src import key_generator
 from src import lockpick
+from src import vernam
+from src import vigenere
 
 
 def generate_random_key():
@@ -35,11 +37,11 @@ else:
 if args.mode == 'encrypt' or args.mode == 'decrypt':
     print("Your key is: {}".format(key))
     if args.algorithm == 'caesar':
-        encryptor = cipher.Caesar()
+        encryptor = caesar.Caesar()
     elif args.algorithm == 'vigenere':
-        encryptor = cipher.Vigenere()
+        encryptor = vigenere.Vigenere()
     else:
-        encryptor = cipher.Vernam()
+        encryptor = vernam.Vernam()
     if args.mode == 'encrypt':
         result_text = encryptor.encrypt(text, key)
     else:
