@@ -39,7 +39,7 @@ class EncryptionTool:
 
     def work(self, text, output):
         if self.args.mode == 'encrypt' or self.args.mode == 'decrypt':
-            print('Your key is: {}'.format(self.key))
+            print(f'Your key is: {self.key}')
             self.set_encryptor()
             if self.args.mode == 'encrypt':
                 result_text = self.encryptor.encrypt(text, self.key)
