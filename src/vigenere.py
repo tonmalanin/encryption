@@ -4,7 +4,7 @@ from src import cipher
 class Vigenere(cipher.Cipher):
     def encrypt(self, text, key):
         it = 0
-        result_text = ""
+        result_text = ''
         for char in text:
             if char.isspace():
                 result_text += char
@@ -16,7 +16,7 @@ class Vigenere(cipher.Cipher):
 
     def decrypt(self, text, key):
         it = 0
-        result_text = ""
+        result_text = ''
         for char in text:
             if char.isspace():
                 result_text += char

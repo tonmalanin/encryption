@@ -39,7 +39,7 @@ class EncryptionTool:
 
     def work(self, text, output):
         if self.args.mode == 'encrypt' or self.args.mode == 'decrypt':
-            print("Your key is: {}".format(self.key))
+            print('Your key is: {}'.format(self.key))
             self.set_encryptor()
             if self.args.mode == 'encrypt':
                 result_text = self.encryptor.encrypt(text, self.key)
@@ -48,7 +48,7 @@ class EncryptionTool:
             output.write(result_text)
         else:
             if self.args.algorithm == 'vigenere' or self.args.algorithm == 'vernam':
-                print("The cipher cannot be cracked")
+                print('The cipher cannot be cracked')
             else:
                 hacker = lockpick.LockPick()
                 result_text = hacker.hack(text)

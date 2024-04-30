@@ -4,7 +4,7 @@ from src import cipher
 class Caesar(cipher.Cipher):
     def encrypt(self, text, key):
         shift = ord(key[0]) - 33
-        result_text = ""
+        result_text = ''
         for char in text:
             if char.isspace():
                 result_text += char
@@ -14,7 +14,7 @@ class Caesar(cipher.Cipher):
 
     def decrypt(self, text, key):
         shift = ord(key[0]) - 33
-        result_text = ""
+        result_text = ''
         for char in text:
             if char.isspace():
                 result_text += char

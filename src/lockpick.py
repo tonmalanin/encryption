@@ -5,7 +5,7 @@ class LockPick:
     def hack(self, text):
         options = []
         for shift in range(94):
-            result_text = ""
+            result_text = ''
             for char in text:
                 if char.isspace():
                     result_text += char
