@@ -26,9 +26,9 @@ class EncryptionTool:
         self.encryptor = caesar.Caesar()
 
     def set_key(self):
-        if self.args.key is not None:
+        if self.args.key:
             self.key = self.args.key
-        elif self.args.random is not None:
+        elif self.args.random:
             self.key = key_generator.generate_key(self.args.random)
 
     def set_encryptor(self):

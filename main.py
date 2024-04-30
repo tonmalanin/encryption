@@ -4,7 +4,7 @@ tool = encryption_tool.EncryptionTool()
 tool.set_key()
 source = open(tool.path, 'r')
 text = source.read()
-if tool.output is not None:
+if tool.output:
     output = open(tool.output, 'a')
 else:
     output = open(tool.path, 'w')
