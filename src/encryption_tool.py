@@ -2,11 +2,7 @@ import argparse
 import random
 import string
 
-from src import caesar
-from src import key_generator
-from src import lockpick
-from src import vernam
-from src import vigenere
+from src import caesar, key_generator, lockpick, vernam, vigenere
 
 
 def generate_random_key():
